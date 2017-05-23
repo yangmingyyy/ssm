@@ -34,6 +34,18 @@
 				<targetPath>props/</targetPath>
 				<filtering>true</filtering>
 			</resource>
+			<resource>
+				<targetPath>${project.build.directory}/classes/META-INF/spring</targetPath>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>spring*.xml</include>
+					<include>dubbo-*.xml</include>
+				</includes>
+				<excludes>
+					<exclude>spring-mvc.xml</exclude>
+				</excludes>
+			</resource>
 		</resources>
 	</build>
 	
