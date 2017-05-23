@@ -12,4 +12,52 @@
 	<properties>
 		<org.springframework.version>3.2.5.RELEASE</org.springframework.version>
 	</properties>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<env.profile>dev</env.profile>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<env.profile>test</env.profile>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env.profile>prod</env.profile>
+			</properties>
+		</profile>
+	</profiles>
+	
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>/*.properties</include>
+					<include>/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources/props.${env.profile}</directory>
+				<targetPath>props/</targetPath>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>
