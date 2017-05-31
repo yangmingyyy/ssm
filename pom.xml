@@ -50,5 +50,6 @@
 	<modules>
 		<module>ampm-base-api</module>
 		<module>ampm-base-service</module>
+		<module>ampm-base-web</module>
 	</modules>
 </project>
