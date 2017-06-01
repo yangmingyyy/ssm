@@ -47,6 +47,14 @@
 				</includes>
 			</resource>
 			<resource>
+				<targetPath>${project.build.directory}/classes/META-INF/dubbo/</targetPath>
+				<directory>src/main/resources/META-INF/dubbo/</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>com.alibaba.dubbo.rpc.Filter</include>
+				</includes>
+			</resource>
+			<resource>
 				<directory>src/main/java</directory>
 				<includes>
 					<include>**/*.properties</include>
